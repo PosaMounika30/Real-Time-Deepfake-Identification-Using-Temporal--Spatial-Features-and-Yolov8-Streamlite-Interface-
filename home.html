@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Home - Deep Fake Detection System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="static/tooplate-aqua-nova-style.css" rel="stylesheet">
+    <style>
+        /* Flex layout for hero section with image */
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+            }
+            .hero-text {
+                padding-right: 0;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .hero-image img {
+                width: 80%;
+            }
+        }
+
+        .feature-grid {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .feature-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            flex: 0 0 30%;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            color: #06b6d4;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="underwater-bg"></div>
+
+    <!-- Navbar Section -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="user_home.html" class="logo-container">
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 50 Q30 30 50 50 T90 50" stroke="#06b6d4" stroke-width="3" fill="none" opacity="0.8" />
+                    <path d="M10 60 Q30 40 50 60 T90 60" stroke="#10b981" stroke-width="2" fill="none" opacity="0.6" />
+                    <circle cx="50" cy="20" r="8" fill="#f97316" opacity="0.8" />
+                    <circle cx="30" cy="75" r="4" fill="#06b6d4" />
+                    <circle cx="70" cy="80" r="3" fill="#10b981" />
+                </svg>
+                <span class="logo-text">DEEP FAKE DETECTION</span>
+            </a>
+
+            <div class="mobile-menu-toggle" id="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Navbar Menu -->
+            <div class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="/home">home</a></li>
+                    <li><a href="/prediction">Prediction</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <!-- Text Column -->
+            <div class="hero-text">
+                <h1>Welcome to our page</h1>
+                <p>Access the Deep Fake Detection Models and Make Predictions for Audio, Image, or Video files.</p>
+            </div>
+
+            <!-- Image Column -->
+            <div class="hero-image">
+                <img src="https://plus.unsplash.com/premium_photo-1749724691803-f3e0e299a55a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGZha2UlMjBkZXRlY3Rpb24lMjB2aWRlb3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=500" alt="Deep Fake Detection">
+            </div>
+        </div>
+    </section>
+
+ 
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-bottom">
+            <p>🌊 &copy; 2026 Deep Fake Detection System. Empowering AI to Detect Fake Media Content 🌊</p>
+        </div>
+    </footer>
+
+    <script src="static/tooplate-aqua-nova-scripts.js"></script>
+</body>
+
+</html>
