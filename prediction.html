@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction - Deep Fake Detection System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="static/tooplate-aqua-nova-style.css" rel="stylesheet">
+    <style>
+        /* Keep original hero styling */
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+        }
+
+        /* Original feature grid style - row based */
+        .feature-grid {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .feature-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            flex: 0 0 30%;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-color: #06b6d4;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            color: #06b6d4;
+        }
+
+        .feature-card p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .predict-btn {
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .predict-btn:hover {
+            background: linear-gradient(135deg, #0891b2, #06b6d4);
+            transform: scale(1.05);
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Media type specific colors */
+        .audio-card h3 { color: #10b981; }
+        .video-card h3 { color: #f97316; }
+        .image-card h3 { color: #06b6d4; }
+
+        .audio-card .predict-btn { 
+            background: linear-gradient(135deg, #10b981, #059669); 
+        }
+        .video-card .predict-btn { 
+            background: linear-gradient(135deg, #f97316, #ea580c); 
+        }
+        .image-card .predict-btn { 
+            background: linear-gradient(135deg, #06b6d4, #0891b2); 
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #06b6d4;
+            border: 2px solid #06b6d4;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .back-btn:hover {
+            background: #06b6d4;
+            color: white;
+            text-decoration: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+            }
+            .hero-text {
+                padding-right: 0;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .feature-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .feature-card {
+                flex: 0 0 80%;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="underwater-bg"></div>
+
+    <!-- Navbar Section -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/home" class="logo-container">
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 50 Q30 30 50 50 T90 50" stroke="#06b6d4" stroke-width="3" fill="none" opacity="0.8" />
+                    <path d="M10 60 Q30 40 50 60 T90 60" stroke="#10b981" stroke-width="2" fill="none" opacity="0.6" />
+                    <circle cx="50" cy="20" r="8" fill="#f97316" opacity="0.8" />
+                    <circle cx="30" cy="75" r="4" fill="#06b6d4" />
+                    <circle cx="70" cy="80" r="3" fill="#10b981" />
+                </svg>
+                <span class="logo-text">DEEP FAKE DETECTION</span>
+            </a>
+
+            <div class="mobile-menu-toggle" id="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Navbar Menu -->
+            <div class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/prediction" class="active">Prediction</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="prediction" class="hero">
+       
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Deep Fake Prediction</h1>
+                <p>Select media type for deep fake detection analysis</p>
+            </div>
+        </div>
+
+        <!-- Feature Grid with 3 boxes in one row -->
+        <div class="feature-grid">
+            <!-- Audio Prediction Box -->
+            <div class="feature-card audio-card">
+                <div style="font-size: 3rem; margin-bottom: 15px;">🎵</div>
+                <h3>Audio Detection</h3>
+                <p>Analyze audio files for voice deep fakes and synthetic speech detection</p>
+                <a href="/audio1" class="predict-btn">Audio Prediction</a>
+            </div>
+
+            <!-- Video Prediction Box -->
+            <div class="feature-card video-card">
+                <div style="font-size: 3rem; margin-bottom: 15px;">🎥</div>
+                <h3>Video Detection</h3>
+                <p>Detect face swaps, lip-sync manipulation and video deep fakes</p>
+                <a href="/video" class="predict-btn">Video Prediction</a>
+            </div>
+
+            <!-- Image Prediction Box -->
+            <div class="feature-card image-card">
+                <div style="font-size: 3rem; margin-bottom: 15px;">🖼️</div>
+                <h3>Image Detection</h3>
+                <p>Verify image authenticity and detect face manipulation</p>
+                <a href="/image" class="predict-btn">Image Prediction</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-bottom">
+            <p>🌊 © 2026 Deep Fake Detection System. Empowering AI to Detect Fake Media Content 🌊</p>
+        </div>
+    </footer>
+
+    <script src="static/tooplate-aqua-nova-scripts.js"></script>
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        if (mobileToggle && navMenu) {
+            mobileToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        // Add active class to prediction nav
+        const predictionLink = document.querySelector('.nav-menu a[href="/prediction"]');
+        if (predictionLink) {
+            predictionLink.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
