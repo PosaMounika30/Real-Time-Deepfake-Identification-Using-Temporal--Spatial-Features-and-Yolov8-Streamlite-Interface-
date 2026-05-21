@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Deep Fake Detection System</title>
+    <link href="static/tooplate-aqua-nova-style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="underwater-bg"></div>
+
+    <!-- Navbar Section -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo-container">
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Deep fake detection logo -->
+                    <path d="M10 50 Q30 30 50 50 T90 50" stroke="#06b6d4" stroke-width="3" fill="none" opacity="0.8">
+                        <animate attributeName="d" dur="4s" repeatCount="indefinite"
+                            values="M10 50 Q30 30 50 50 T90 50;M10 50 Q30 70 50 50 T90 50;M10 50 Q30 30 50 50 T90 50" />
+                    </path>
+                    <path d="M10 60 Q30 40 50 60 T90 60" stroke="#10b981" stroke-width="2" fill="none" opacity="0.6">
+                        <animate attributeName="d" dur="3s" repeatCount="indefinite"
+                            values="M10 60 Q30 40 50 60 T90 60;M10 60 Q30 80 50 60 T90 60;M10 60 Q30 40 50 60 T90 60" />
+                    </path>
+                    <circle cx="50" cy="20" r="8" fill="#f97316" opacity="0.8" />
+                    <circle cx="30" cy="75" r="4" fill="#06b6d4" />
+                    <circle cx="70" cy="80" r="3" fill="#10b981" />
+                </svg>
+                <span class="logo-text">DEEP FAKE DETECTION</span>
+            </a>
+
+            <div class="mobile-menu-toggle" id="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/about">ABOUT</a></li>
+                    <li><a href="/register">REGISTER</a></li>
+                    <li><a href="/login">LOGIN</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="about" class="fade-in">
+        <h2 class="section-title">Deep Fake Detection System</h2>
+        <div class="about-section">
+            <div class="about-hero">
+                <h3>Uncovering the Truth in Media with AI</h3>
+                <p class="about-description">
+                    Our project focuses on detecting deep fake content using advanced deep learning techniques. With the
+                    rise
+                    of synthetic media, it has become essential to identify and mitigate the impact of manipulated
+                    videos,
+                    audios, and images. By leveraging the power of AI, our system offers a robust solution for detecting
+                    deep
+                    fakes in real-time.
+                </p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <span class="about-card-icon">🎧</span>
+                    <h4>Audio Deep Fake Detection</h4>
+                    <p>Using CNNs to detect manipulated speech patterns and unnatural audio features for identifying
+                        deep fake audio.</p>
+                </div>
+
+                <div class="about-card">
+                    <span class="about-card-icon">🖼️</span>
+                    <h4>Face Image Deep Fake Detection</h4>
+                    <p>Using YOLOv8, YOLOv10, EfficientNet, and Fast-CNN for detecting fake faces in images and
+                        verifying authenticity.</p>
+                </div>
+
+                <div class="about-card">
+                    <span class="about-card-icon">📹</span>
+                    <h4>Video Deep Fake Detection</h4>
+                    <p>Using CNN-RNN models to analyze temporal and spatial features for detecting fake videos that
+                        blend audio and visual elements.</p>
+                </div>
+            </div>
+            <br>
+            <br>
+
+
+            <h3>Project Abstract</h3>
+            <br>
+            <br>
+
+            <p class="about-description" style="text-align: justify;">
+                This project presents a hybrid deep learning framework for detecting deep fakes using temporal and
+                spatial features
+                across three modalities: audio, face images, and videos. For audio detection, a Convolutional Neural
+                Network (CNN)
+                is employed to identify anomalies in speech patterns. Face image detection is handled using advanced
+                models such as
+                YOLOv8, YOLOv10, EfficientNet, and Fast-CNN to classify whether the image is real or fake. For video
+                deep fake detection,
+                a CNN-RNN architecture is used to capture both spatial and temporal features for more accurate
+                detection. The system
+                is integrated with a web interface, allowing users to efficiently upload and analyze media, providing an
+                accessible
+                tool for detecting deep fakes in diverse content.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-bottom">
+            <p>🌊 &copy; 2026 Deep Fake Detection System. Empowering AI to Detect Fake Media Content 🌊</p>
+        </div>
+    </footer>
+
+    <script src="static/tooplate-aqua-nova-scripts.js"></script>
+</body>
+
+</html>
