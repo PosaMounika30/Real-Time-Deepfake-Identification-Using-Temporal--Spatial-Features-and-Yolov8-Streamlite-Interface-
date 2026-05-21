@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Deep Fake Detection System</title>
+    <link href="static/tooplate-aqua-nova-style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="underwater-bg"></div>
+
+    <!-- Navbar Section -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo-container">
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Deep fake detection logo -->
+                    <path d="M10 50 Q30 30 50 50 T90 50" stroke="#06b6d4" stroke-width="3" fill="none" opacity="0.8">
+                        <animate attributeName="d" dur="4s" repeatCount="indefinite"
+                            values="M10 50 Q30 30 50 50 T90 50;M10 50 Q30 70 50 50 T90 50;M10 50 Q30 30 50 50 T90 50" />
+                    </path>
+                    <path d="M10 60 Q30 40 50 60 T90 60" stroke="#10b981" stroke-width="2" fill="none" opacity="0.6">
+                        <animate attributeName="d" dur="3s" repeatCount="indefinite"
+                            values="M10 60 Q30 40 50 60 T90 60;M10 60 Q30 80 50 60 T90 60;M10 60 Q30 40 50 60 T90 60" />
+                    </path>
+                    <circle cx="50" cy="20" r="8" fill="#f97316" opacity="0.8" />
+                    <circle cx="30" cy="75" r="4" fill="#06b6d4" />
+                    <circle cx="70" cy="80" r="3" fill="#10b981" />
+                </svg>
+                <span class="logo-text">DEEP FAKE DETECTION</span>
+            </a>
+
+            <div class="mobile-menu-toggle" id="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/about">ABOUT</a></li>
+                    <li><a href="/register">REGISTER</a></li>
+                    <li><a href="/login">LOGIN</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="login" class="fade-in">
+        <h2 class="section-title">Login to Deep Fake Detection System</h2>
+        <div class="register-container">
+            <form method="POST" action="/login">
+
+
+                <center>
+
+                    <!-- Display Message -->
+                    {% if message %}
+                    <div class="alert-message">
+                        <p>{{ message }}</p>
+                    </div>
+                    {% endif %}
+                    <br>
+
+                </center>
+                <!-- Email Field -->
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Enter your Email" required>
+                </div>
+
+                <!-- Password Field -->
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Enter your Password" required>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" class="dive-btn">Login</button>
+                <br>
+
+                <!-- Register Link -->
+                <center>
+                    <br>
+                    <div class="login-link">
+                        <p>Don't have an account? <a href="register">Register here</a></p>
+                    </div>
+                </center>
+            </form>
+
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-bottom">
+            <p>🌊 &copy; 2026 Deep Fake Detection System. Empowering AI to Detect Fake Media Content 🌊</p>
+        </div>
+    </footer>
+
+    <script src="static/tooplate-aqua-nova-scripts.js"></script>
+</body>
+
+</html>
