@@ -1,0 +1,2 @@
+# Real-Time-Deepfake-Identification-Using-Temporal--Spatial-Features-and-Yolov8-Streamlite-Interface-
+Real-Time Deepfake Detection System using YOLOv8 and Temporal-Spatial feature analysis to detect fake videos and images with high accuracy. Developed using Python, Machine Learning, and Streamlit for real-time media upload, analysis, and prediction to improve digital security and prevent misinformation.
